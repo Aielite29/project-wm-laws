@@ -1,30 +1,4 @@
-#!/usr/bin/env python3
-"""
-keylock_dyna_explore.py
 
-Upgraded Key/Lock/Sword/Monster environment + Dyna-Q with:
- - Larger default grid (configurable)
- - Epsilon-linear decay schedule (explore -> exploit)
- - Intrinsic bonus on discovering NEW rule events (encourages exploration of rule-space)
- - Larger Dyna planning_steps by default
- - Per-episode ASCII frame logs for VLM "watching"
- - Trajectories and rule archive JSONL outputs
-
-Usage:
-  python keylock_dyna_explore.py --episodes 500 --width 8 --height 8 --out_dir ./runs/demo
-
-Outputs:
- - <out_dir>/trajectories.jsonl
- - <out_dir>/rule_archive.jsonl
- - <out_dir>/episodes/episode_###.txt  (one file per episode; contains ASCII frames + rule events)
-"""
-import argparse, json, os, random, time
-from collections import defaultdict, OrderedDict
-import numpy as np
-
-# -----------------------
-# Law classes (same style)
-# -----------------------
 class Law:
     def apply(self, state, action, env):
         raise NotImplementedError
@@ -417,3 +391,4 @@ if __name__ == "__main__":
 
     os.makedirs(args.out_dir, exist_ok=True)
     main(args)
+
