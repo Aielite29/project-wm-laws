@@ -46,17 +46,6 @@ python vlm_rule_discovery.py --run_dir ./runs/exp1 --vlm dry \
     --out rules_vlm.jsonl --out_summary rules_summary.json
 
 
-HTTP VLM:
-
-python vlm_rule_discovery.py --run_dir ./runs/exp1 --vlm http \
-    --vlm_url http://localhost:8000/predict
-
-
-OpenAI:
-
-python vlm_rule_discovery.py --run_dir ./runs/exp1 --vlm openai \
-    --model gpt-4o-mini
-
 Workflow
 
 Train agent with dyna_law_env2.py → generate episodes/trajectories.
